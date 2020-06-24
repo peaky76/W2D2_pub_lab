@@ -37,6 +37,15 @@ class TestPub < Minitest::Test
         assert_equal(3, @pub.drinks.length)
     end
 
+    def test_pub_has_stock()
+        for item in @pub.stock
+            if item[:stock_item] == @drink1
+                result = item[:stock_level]
+            end
+        end
+        assert_equal(50, result)
+    end
+
     def test_get_price_of_a_drink()
         result = @pub.get_drink_price(@drink1)
         assert_equal(5, result)
@@ -76,6 +85,6 @@ class TestPub < Minitest::Test
     def test_get_price_of_food()
         result = @pub.get_food_price(@food1)
         assert_equal(8, result)
-    end
+    end 
     
 end

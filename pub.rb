@@ -1,11 +1,16 @@
 class Pub
 
-    attr_reader :name, :drinks, :till
+    attr_reader :name, :drinks, :till, :stock
 
     def initialize(name, till, drinks)
         @name = name
         @till = till
         @drinks = drinks
+        @stock = []
+        for drink in @drinks
+            @stock << {stock_item: drink, stock_level: 50}
+        end
+        
     end
 
     def cash_in_till?()

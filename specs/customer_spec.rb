@@ -7,7 +7,6 @@ require_relative('../drink')
 require_relative('../pub')
 require_relative('../food')
 
-
 class TestCustomer < Minitest::Test
 
     def setup()
@@ -42,7 +41,7 @@ class TestCustomer < Minitest::Test
         assert_equal(0, @customer.drunkenness)
     end
 
-    def test_drunkennes_goes_up()
+    def test_drunkenness_goes_up()
         @customer.buy_drink(@drink1, @pub)
         assert_equal(2,@customer.drunkenness)
     end
