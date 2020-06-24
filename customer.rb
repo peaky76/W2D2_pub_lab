@@ -16,6 +16,8 @@ def buy_drink(drink, pub)
     @wallet -= price
     # increase till by price of beer
     pub.put_money_in_till(price)
+    # increase customer drunkenness
+    @drunkenness += drink.alcohol_level
 end
 
 
