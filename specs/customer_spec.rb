@@ -14,6 +14,11 @@ class TestCustomer < Minitest::Test
     def test_customer_has_name()
         assert_equal("John", @customer.name)
     end
+
+    def test_there_is_money_in_wallet()
+        assert_equal(100, @customer.wallet)
+
+    end
     
 
 
