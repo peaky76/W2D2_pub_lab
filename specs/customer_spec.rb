@@ -11,9 +11,9 @@ class TestCustomer < Minitest::Test
     def setup()
         @customer = Customer.new("John", 100, 29)
         @pub = Pub.new("Brass Monkey", 0, @drinks)
-        @drink1 = Drink.new("IPA", 5)
-        @drink2 = Drink.new("Pilsner", 6)
-        @drink3 = Drink.new("Lager", 4)
+        @drink1 = Drink.new("IPA", 5, 2)
+        @drink2 = Drink.new("Pilsner", 6, 3)
+        @drink3 = Drink.new("Lager", 4, 2)
         @drinks = [@drink1, @drink2, @drink3]
     end
 
@@ -33,6 +33,10 @@ class TestCustomer < Minitest::Test
 
     def test_customer_age()
         assert_equal(29, @customer.age)
+    end
+
+    def test_customer_is_sober()
+        assert_equal(0, @customer.drunkenness)
     end
 
 
