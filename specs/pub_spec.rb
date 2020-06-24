@@ -28,4 +28,8 @@ class TestPub < Minitest::Test
         assert_equal(false, @pub2.cash_in_till?())
     end
 
+    def test_pub_has_drinks()
+        assert_equal(3, @pub.drinks.length)
+    end
+
 end
