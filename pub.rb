@@ -1,6 +1,6 @@
 class Pub
 
-    attr_reader :name, :drinks
+    attr_reader :name, :drinks, :till
 
     def initialize(name, till, drinks)
         @name = name
@@ -16,9 +16,12 @@ class Pub
         end
     end
 
-
     def get_drink_price(drink)
         return drink.price
+    end
+
+    def put_money_in_till(amount)
+        @till += amount
     end
 
 end

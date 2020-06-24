@@ -37,6 +37,9 @@ class TestPub < Minitest::Test
         assert_equal(5, result)
     end
 
-
+    def test_put_money_in_till()
+        @pub.put_money_in_till(10)
+        assert_equal(1010, @pub.till)
+    end
 
 end
