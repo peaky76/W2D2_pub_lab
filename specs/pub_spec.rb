@@ -32,4 +32,11 @@ class TestPub < Minitest::Test
         assert_equal(3, @pub.drinks.length)
     end
 
+    def test_get_price_of_a_drink()
+        result = @pub.get_drink_price(@drink1)
+        assert_equal(5, result)
+    end
+
+
+
 end

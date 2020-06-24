@@ -16,4 +16,9 @@ class Pub
         end
     end
 
+
+    def get_drink_price(drink)
+        return drink.price
+    end
+
 end
