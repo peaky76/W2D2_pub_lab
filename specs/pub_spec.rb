@@ -9,9 +9,9 @@ require_relative('../customer')
 class TestPub < Minitest::Test
 
     def setup()
-        @drink1 = Drink.new("IPA", 5)
-        @drink2 = Drink.new("Pilsner", 6)
-        @drink3 = Drink.new("Lager", 4)
+        @drink1 = Drink.new("IPA", 5, 2)
+        @drink2 = Drink.new("Pilsner", 6, 3)
+        @drink3 = Drink.new("Lager", 4, 2)
         @drinks = [@drink1, @drink2, @drink3]
         @pub = Pub.new("Rose n Crown", 1000, @drinks)
         @pub2 = Pub.new("Brass Monkey", 0, @drinks)
@@ -54,5 +54,22 @@ class TestPub < Minitest::Test
         result = @pub.check_age(@customer_young)
         assert_equal(false, result)
     end
+
+    def test_customer_too_drunk_true()
+        @customer_old.buy_drink(@drink1, @pub)
+        @customer_old.buy_drink(@drink1, @pub)
+        @customer_old.buy_drink(@drink1, @pub)
+        @customer_old.buy_drink(@drink1, @pub)
+        @customer_old.buy_drink(@drink1, @pub)
+        @customer_old.buy_drink(@drink1, @pub)
+        result = @pub.check_drunkenness(@customer_old)
+        assert_equal(true, result)
+    end
+
+    def test_customer_too_drunk_false()
+        result = @pub.check_drunkenness(@customer_young)
+        assert_equal(false, result)
+    end
+
     
 end

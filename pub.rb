@@ -31,4 +31,13 @@ class Pub
             return false
         end
     end
+
+    def check_drunkenness(customer)
+        if customer.drunkenness >= 10
+            return true
+        else
+            return false
+        end
+    end
+
 end
