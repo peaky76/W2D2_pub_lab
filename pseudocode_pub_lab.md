@@ -3,13 +3,15 @@
 # Properties:
 
 name
+age
 till
 drinks
 
 # Methods:
 
 take_money(price)
-
+check_age(customer)
+check_drunkenness(customer)
 
 # DRINK
 
@@ -17,6 +19,7 @@ take_money(price)
 
 name
 price
+alcohol_level
 
 # Methods:
 
@@ -26,6 +29,7 @@ price
 
 name
 wallet
+drunkenness
 
 # Methods:
 
