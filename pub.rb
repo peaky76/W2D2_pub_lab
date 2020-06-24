@@ -40,4 +40,8 @@ class Pub
         end
     end
 
+    def get_food_price(food)
+        return food.price
+    end
+
 end

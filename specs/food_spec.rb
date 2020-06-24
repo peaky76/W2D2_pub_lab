@@ -26,6 +26,8 @@ class TestFood < Minitest::Test
         assert_equal(4, @food.rejuvenation_level)
     end
 
+    
+
 
 
 end
