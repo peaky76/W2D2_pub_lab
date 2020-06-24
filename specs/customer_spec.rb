@@ -17,8 +17,8 @@ class TestCustomer < Minitest::Test
 
     def test_there_is_money_in_wallet()
         assert_equal(100, @customer.wallet)
-
     end
+    
     
 
 
