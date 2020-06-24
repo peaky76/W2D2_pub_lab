@@ -34,4 +34,17 @@ drunkenness
 # Methods:
 
 buy_drink(drink, pub)
+buy_food(food, pub)
 pay(price)
+
+# FOOD
+
+# Properties:
+
+name
+price
+rejuvenation_level
+
+# Methods:
+
+
