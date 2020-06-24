@@ -24,4 +24,11 @@ class Pub
         @till += amount
     end
 
+    def check_age(customer)
+        if customer.age >= 18
+            return true
+        else
+            return false
+        end
+    end
 end

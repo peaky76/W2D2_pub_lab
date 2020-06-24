@@ -4,6 +4,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative('../pub')
 require_relative('../drink')
+require_relative('../customer')
 
 class TestPub < Minitest::Test
 
@@ -14,6 +15,8 @@ class TestPub < Minitest::Test
         @drinks = [@drink1, @drink2, @drink3]
         @pub = Pub.new("Rose n Crown", 1000, @drinks)
         @pub2 = Pub.new("Brass Monkey", 0, @drinks)
+        @customer_young = Customer.new("Al", 100, 16)
+        @customer_old = Customer.new("Bob", 100, 93)
     end
 
     def test_pub_has_name()
@@ -42,4 +45,14 @@ class TestPub < Minitest::Test
         assert_equal(1010, @pub.till)
     end
 
+    def test_customer_age_overage()
+        result = @pub.check_age(@customer_old)
+        assert_equal(true, result)
+    end
+
+    def test_customer_age_underage()
+        result = @pub.check_age(@customer_young)
+        assert_equal(false, result)
+    end
+    
 end
